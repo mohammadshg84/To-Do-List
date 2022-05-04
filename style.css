@@ -1,0 +1,87 @@
+* {
+  font-family: Vazir;
+  direction: rtl;
+}
+body {
+  background-color: #35363a;
+  /*color: #fff;*/
+}
+
+.heading {
+  width: 50%;
+    margin: 30px auto;
+    text-align: center;
+    color: #fff;
+  }
+  form {
+    width: 35%;
+    margin: 30px auto;
+    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 18px;
+  }
+  form p {
+    color: red;
+    margin: 0px;
+  }
+  .task_input {
+    width: 75%;
+    height: 15px;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #fff;
+    border-radius: 18px;
+    background-color: #35363a;
+    color: #fff;
+  }
+  .add_btn {
+    height: 39px;
+    background: #7a7777e0;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 18px;
+    padding: 5px 20px;
+  }
+  table {
+    width: 50%;
+    margin: 30px auto;
+    border-collapse: collapse;
+  }
+  tr {
+    border-bottom: 1px solid #cbcbcbad;
+  }
+  .tr-c {
+    color: #fff;
+  }
+  th {
+    font-size: 19px;
+    color: #ee5353;
+  }
+  th,
+  td {
+    border: none;
+    height: 30px;
+    padding: 2px;
+  }
+  .task {
+    text-align: left;
+  }
+  .delete {
+    text-align: center;
+  }
+  .delete a {
+    color: white;
+    background: #a52a2a;
+    padding: 1px 6px;
+    border-radius: 18px;
+    text-decoration: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  .add_btn {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+  }
