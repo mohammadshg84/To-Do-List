@@ -34,7 +34,7 @@ if (isset($_GET['complete'])) {
 
 <body dir="auto">
 	<div class="heading">
-		<a href="/projects/ToDoList">
+		<a href="">
 			<h2 style="font-style: 'Hervetica'; color: #fff;">ToDo List PHP</h2>
 		</a>
 	</div>
