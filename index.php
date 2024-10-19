@@ -2,7 +2,6 @@
 $errors = "";
 $db = mysqli_connect("localhost", "root", "", "todolist");
 
-// چک کردن اتصال به دیتابیس
 if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
 }
@@ -15,13 +14,12 @@ if (isset($_POST['submit'])) {
         $date1 = $_POST['date1'];
         $discribe = $_POST['discribe'];
 
-        // استفاده از کوئری آماده برای جلوگیری از SQL Injection
         $stmt = $db->prepare("INSERT INTO tasks2 (task, date, discribe) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $task, $date1, $discribe);
 
         if ($stmt->execute()) {
-            header('Location: ' . $_SERVER['PHP_SELF']); // هدایت به صفحه فعلی
-            exit(); // خروج از اسکریپت بعد از هدایت
+            header('Location: ' . $_SERVER['PHP_SELF']);
+            exit();
         } else {
             $errors = "خطا در ثبت اطلاعات: " . $stmt->error;
         }
@@ -33,12 +31,11 @@ if (isset($_POST['submit'])) {
 if (isset($_GET['complete'])) {
     $id = $_GET['complete'];
 
-    // استفاده از کوئری آماده برای حذف ایمن
     $stmt = $db->prepare("DELETE FROM tasks2 WHERE id = ?");
     $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {
-        header('Location: ' . $_SERVER['PHP_SELF']); // هدایت به صفحه فعلی
+        header('Location: ' . $_SERVER['PHP_SELF']);
         exit();
     } else {
         $errors = "خطا در حذف اطلاعات: " . $stmt->error;
@@ -50,14 +47,12 @@ if (isset($_GET['complete'])) {
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-
 <body dir="auto">
     <div class="heading">
         <a href="">
@@ -81,7 +76,6 @@ if (isset($_GET['complete'])) {
         <hr>
         <tbody>
             <?php
-            // گرفتن وظایف از دیتابیس
             $tasks = mysqli_query($db, "SELECT * FROM tasks2");
             $i = 1;
             while ($row = mysqli_fetch_assoc($tasks)) { ?>
